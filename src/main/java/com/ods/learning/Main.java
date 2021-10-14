@@ -9,5 +9,6 @@ public class Main {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         Car car = (Car) applicationContext.getBean("simpleCar");
         System.out.println(car);
+        System.out.println();
     }
 }
