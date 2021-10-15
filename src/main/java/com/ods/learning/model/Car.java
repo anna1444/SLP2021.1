@@ -1,9 +1,7 @@
 package com.ods.learning.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Car {
@@ -13,11 +11,22 @@ public class Car {
     private String model;
     private String number;
 
+    @OneToOne
+    private Engine engine;
+
     public Car(){}
 
     public Car(String model, String number) {
         this.model = model;
         this.number = number;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
     }
 
     public Integer getId() {
